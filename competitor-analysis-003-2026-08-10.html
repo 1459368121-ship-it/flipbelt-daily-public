@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飞比特竞品分析日报 — 2026年8月10日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    color: #1a1a2e;
+    background: #f8f9fa;
+    line-height: 1.8;
+  }
+  .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 48px 0 36px;
+    border-bottom: 1px solid #e2e5ea;
+    margin-bottom: 36px;
+  }
+  .header .date { font-size: 14px; color: #868e96; margin-bottom: 8px; letter-spacing: 1px; }
+  .header h1 { font-size: 28px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; }
+  .header .subtitle { font-size: 15px; color: #495057; font-weight: 400; }
+  .header .issue { display: inline-block; background: #e9ecef; color: #495057; font-size: 12px; padding: 3px 12px; border-radius: 12px; margin-top: 10px; }
+
+  /* Brand Cards */
+  .cards { display: flex; gap: 20px; margin-bottom: 40px; }
+  .card { flex: 1; border-radius: 12px; padding: 24px; position: relative; overflow: hidden; }
+  .card.foreign { background: linear-gradient(135deg, #e7f1ff, #d4e4ff); border: 1px solid #b8d4fe; }
+  .card.domestic { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border: 1px solid #ffcc80; }
+  .card .tag {
+    display: inline-block; font-size: 11px; padding: 2px 10px; border-radius: 4px;
+    font-weight: 600; letter-spacing: 0.5px; margin-bottom: 12px;
+  }
+  .card.foreign .tag { background: #1976d2; color: #fff; }
+  .card.domestic .tag { background: #e65100; color: #fff; }
+  .card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .card .brand-name { font-size: 14px; color: #495057; font-weight: 500; margin-bottom: 8px; }
+  .card .desc { font-size: 13px; color: #6c757d; line-height: 1.7; }
+  .card .meta { margin-top: 12px; display: flex; gap: 16px; font-size: 12px; color: #868e96; }
+  .card .meta span::before { content: '· '; }
+  .card .meta span:first-child::before { content: ''; }
+
+  /* Section Headers */
+  .section-header { margin: 44px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #e9ecef; }
+  .section-header .sec-tag {
+    display: inline-block; font-size: 11px; padding: 3px 12px; border-radius: 4px;
+    font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px;
+  }
+  .section-header .sec-tag.blue { background: #1976d2; color: #fff; }
+  .section-header .sec-tag.orange { background: #e65100; color: #fff; }
+  .section-header h2 { font-size: 22px; font-weight: 700; color: #1a1a2e; }
+  .section-header .colec { font-size: 13px; color: #868e96; margin-top: 4px; }
+
+  /* Dimension */
+  .dim { margin-bottom: 36px; }
+  .dim h3 {
+    font-size: 17px; font-weight: 700; color: #1a1a2e; margin-bottom: 14px;
+    padding-left: 12px; border-left: 4px solid #1976d2;
+  }
+  .domestic-section .dim h3 { border-left-color: #e65100; }
+  .dim p { font-size: 15px; color: #343a40; margin-bottom: 12px; }
+  .dim ul { margin: 8px 0 12px 20px; }
+  .dim ul li { font-size: 14px; color: #495057; margin-bottom: 4px; }
+
+  /* Image */
+  .fig { margin: 20px 0; }
+  .fig img {
+    width: 100%; object-fit: contain; display: block;
+    border-radius: 8px; border: 1px solid #e9ecef;
+    background: #f1f3f5;
+  }
+  .fig .caption {
+    margin-top: 8px; font-size: 13px; color: #495057;
+    font-weight: 600; line-height: 1.5;
+  }
+  .fig .caption-desc {
+    font-size: 12px; color: #868e96; font-weight: 400; margin-top: 2px;
+  }
+
+  /* Highlight Box */
+  .hl-box {
+    background: #f0f7ff; border-left: 4px solid #1976d2;
+    padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 16px 0;
+    font-size: 14px; color: #343a40;
+  }
+  .domestic-section .hl-box { background: #fff8f0; border-left-color: #e65100; }
+  .hl-box strong { color: #1976d2; }
+  .domestic-section .hl-box strong { color: #e65100; }
+
+  /* Divider */
+  .divider {
+    border: none; border-top: 1px dashed #dee2e6; margin: 48px 0;
+    text-align: center; position: relative;
+  }
+  .divider::after {
+    content: '◆ ◆ ◆';
+    position: relative; top: -11px; background: #f8f9fa; padding: 0 16px;
+    color: #adb5bd; font-size: 10px; letter-spacing: 3px;
+  }
+
+  /* Takeaways */
+  .takeaways { margin-top: 48px; }
+  .takeaways h3 {
+    font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 20px;
+    padding-left: 12px; border-left: 4px solid #2e7d32;
+  }
+  .takeaway-item {
+    background: #fff; border: 1px solid #e9ecef; border-radius: 8px;
+    padding: 16px 20px; margin-bottom: 12px;
+  }
+  .takeaway-item .src {
+    display: inline-block; font-size: 10px; padding: 1px 8px; border-radius: 3px;
+    font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px;
+  }
+  .takeaway-item .src.blue { background: #e3f2fd; color: #1565c0; }
+  .takeaway-item .src.orange { background: #fff3e0; color: #e65100; }
+  .takeaway-item h4 { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+  .takeaway-item p { font-size: 13px; color: #6c757d; }
+
+  /* Inspirations */
+  .inspirations { margin-top: 36px; }
+  .inspirations h3 {
+    font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 16px;
+    padding-left: 12px; border-left: 4px solid #7b1fa2;
+  }
+  .insp {
+    background: #faf5ff; border: 1px solid #e5dbff; border-radius: 8px;
+    padding: 16px 20px; margin-bottom: 12px;
+  }
+  .insp h4 { font-size: 15px; font-weight: 700; color: #6a1b9a; margin-bottom: 6px; }
+  .insp p { font-size: 13px; color: #495057; }
+
+  /* Footer */
+  .footer {
+    margin-top: 60px; padding-top: 24px; border-top: 1px solid #e9ecef;
+    text-align: center; font-size: 12px; color: #adb5bd;
+  }
+  .footer strong { color: #868e96; }
+
+  @media (max-width: 640px) {
+    .cards { flex-direction: column; }
+    .container { padding: 20px 16px 60px; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+</head><body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="date">2026年8月10日 · 星期一</div>
+  <h1>飞比特竞品分析日报</h1>
+  <div class="subtitle">Tracksmith 2026夏季"Run Cannonball Run"泳跑系列 + 内道 HexRise蜂核科技·柔风系列</div>
+  <div class="issue">第003期</div>
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+  <div class="card foreign">
+    <div class="tag">国外品牌</div>
+    <h3>Run Cannonball Run 夏季泳跑系列</h3>
+    <div class="brand-name">Tracksmith · 美国波士顿</div>
+    <div class="desc">以"跑后跃入水中"为设计原点，横跨跑步与游泳两栖场景。日本高性能亚麻×Coolmax®混纺面料重新定义"跑步可以穿的亚麻"，PFC-free DWR速干短裤实现"跑热→跳湖→干爽回程"的无缝切换。</div>
+    <div class="meta"><span>2026年7月发布</span><span>Summer 2026</span><span>$75–$165</span></div>
+  </div>
+  <div class="card domestic">
+    <div class="tag">国内品牌</div>
+    <h3>HexRise蜂核科技 · 柔风5.0系列</h3>
+    <div class="brand-name">内道 NEDAO · 中国上海</div>
+    <div class="desc">HexRise面料获2025 ISPO全球大奖：吸汗后自动从二维平面网格转变为三维蜂窝立体结构，减少皮肤接触面积。柔风马拉松背心仅38克，聚能卷系列采用日本进口面料实现"湿态保暖"。</div>
+    <div class="meta"><span>2026春夏</span><span>ISPO获奖</span><span>¥154–¥499</span></div>
+  </div>
+</div>
+
+<!-- ========== FOREIGN: TRACKSMITH ========== -->
+<div class="section-header">
+  <div class="sec-tag blue">国外品牌 · 深度分析</div>
+  <h2>Tracksmith — Run Cannonball Run 夏季泳跑系列</h2>
+  <div class="colec">含 Meridian UPF50+ 系列 · Twilight 轻量系列</div>
+</div>
+
+<!-- 版型与剪裁 -->
+<div class="dim">
+  <h3>一、版型与剪裁</h3>
+
+  <p>Tracksmith本季在版型上推进了两个关键方向：<strong>泳跑两栖的"冲浪短裤"剪裁</strong>和<strong>"非运动感"的松弛廓形</strong>。</p>
+
+  <p>Run Cannonball Run Shorts（$110）的版型直接借鉴了冲浪板短裤（board shorts）的设计语言：低轮廓包边（low-profile binding）、弧形海豚下摆（dolphin hems）、抽绳腰带。女子款2⅝"–3"渐变内缝长度按尺码差异化处理（XS-M为2⅝"，L-XL为3"），而非—刀切——这在跑步短裤中少见，体现了按体型微调版型的思路。男子款5"内缝长，整体呈现介于跑步短裤和沙滩短裤之间的松弛感。</p>
+
+  <p>Run Cannonball Run Linen Popover（$165）采用<strong>落肩袖（dropped armholes）+ 后背箱形褶裥（center-back box pleat）</strong>的松弛轮廓，这是传统运动上衣几乎不会使用的剪裁语言。落肩设计消除了肩部缝线对摆臂的束缚，后背褶裥在跑步步幅中提供额外横向释放空间。整体廓形更接近"亚麻衬衫"而非"跑步T恤"，但功能性细节（左胸嵌入式口袋、筒形袖口、门襟）完全按跑步场景配置。</p>
+
+  <p>Twilight Shorts（$75）则走<strong>"性能极简"路线</strong>：5"内缝，腰部抽褶（shirring）打造髋臀部的放松余量，侧缝开衩释放迈步空间。版型逻辑是"在竞速需要的部位贴合，在日常舒适需要的部位放松"，呈现出介于压缩短裤和宽松训练短裤之间的第三种形态。</p>
+
+  <div class="fig">
+    <img src="https://cdn-image.tracksmith.com/1780670901-ts_spring1_oregon_14222-1-29.png?auto=format,compress" alt="RCR Shorts 穿着效果" loading="lazy">
+    <div class="caption">▲ Run Cannonball Run Shorts 穿着效果</div>
+    <div class="caption-desc">弧形海豚下摆 + 低轮廓包边，版型介于跑步短裤与冲浪短裤之间，女子款按尺码差异化内缝长度</div>
+  </div>
+
+  <div class="fig">
+    <img src="https://cdn-image.tracksmith.com/1780670901-description-panel-1-1.png?auto=format,compress" alt="RCR Shorts 细节" loading="lazy">
+    <div class="caption">▲ Run Cannonball Run Shorts 设计细节</div>
+    <div class="caption-desc">抽绳腰带 + PFC-free DWR处理的4-way弹力梭织面料，内衬为超轻VentAir快干材质</div>
+  </div>
+</div>
+
+<!-- 印花与图案 -->
+<div class="dim">
+  <h3>二、印花与图案</h3>
+
+  <p>Tracksmith本季的视觉方向是<strong>"消隐设计"——用织物本身的肌理和结构取代印花图案</strong>，仅在少数产品上使用低调的季节性印花。</p>
+
+  <p>RCR Shorts的"Red Clay Sun Print"配色是今夏的核心印花：红陶底色上叠加手绘感太阳放射纹样，图案灵感源自Block Island（罗德岛离岛）夏日光线。这个印花的执行方式不是胶印或热转印，而是<strong>色织工艺</strong>——图案在面料织造阶段就已嵌入，确保游泳浸水后不脱落、不褪色。Rolling Hills配色则采用地形等高线抽象纹理，整体呈现大地色系的水彩质感。</p>
+
+  <p>Meridian系列完全放弃印花，以<strong>纯色 + 面料肌理</strong>构建视觉语言。Meridian Tee的Ivory配色呈现奶油白底色，Orangeade/Red Clay配色在橙色基底上叠加热力红渐变效果，通过纱线染色而非后整印花实现色彩层次。这种"去图案化"策略与Tracksmith整体品牌美学一致——让跑者本人成为视觉焦点，服装只是背景。</p>
+
+  <p>Twilight系列延续了同样的逻辑：Urban（灰调）、Black、Navy三色，无任何图案装饰。品牌辨识度仅通过右后腰的<strong>嵌入式赛道条纹挂环（racing stripe locker loop）</strong>传递，这是Tracksmith标志性的微识别元素。</p>
+
+  <div class="fig">
+    <img src="https://cdn-image.tracksmith.com/1779128814-hero-5.png?auto=format,compress" alt="Meridian Tank 橙红配色" loading="lazy">
+    <div class="caption">▲ Meridian Tank — Orangeade/Red Clay 配色</div>
+    <div class="caption-desc">纯色路线，无印花，靠纱线染色实现色彩层次。UPF 50+ 防护 + VentAir透气技术</div>
+  </div>
+
+  <div class="fig">
+    <img src="https://cdn-image.tracksmith.com/1779131457-buying-panel-image-17.png?auto=format,compress" alt="Meridian Tank 背视" loading="lazy">
+    <div class="caption">▲ Meridian Tank 后背视角</div>
+    <div class="caption-desc">工字背设计 + 高露肤度，最大化热区通风。粘合下摆处理，无折边摩擦</div>
+  </div>
+</div>
+
+<!-- 面料与技术 -->
+<div class="dim">
+  <h3>三、面料与技术</h3>
+
+  <p>本季Tracksmith在面料端有三项值得关注的创新：</p>
+
+  <p><strong>① 日本高性能亚麻 × Coolmax® 混纺（RCR Linen系列）</strong>：59%涤纶 + 28%亚麻 + 13% Coolmax®，这是一组极具实验精神的配比。传统亚麻因吸湿后变重、易皱、摩擦大，从未被严肃用作跑步面料。Tracksmith通过引入Coolmax®异型截面纤维解决了吸湿排汗问题，涤纶骨架提供结构稳定性和抗皱性，亚麻则保留了干爽触感和天然肌理。实测表明开放式编织结构在30℃以上运动中仍保持良好透气，且面料不会产生传统亚麻的硬折痕。</p>
+
+  <p><strong>② PFC-free DWR + 4-way弹力梭织（RCR Shorts）</strong>：短裤主体为100%涤纶4-way弹力梭织面料，表面经PFC-free DWR（无氟耐久拒水）处理。入水后水珠滚落而非渗透，面料不会吸水增重。内衬为86%涤纶+14%氨纶的VentAir超轻材质，入水后不吸水、不贴肤、不摩擦。实测在跳湖游泳后跑步1英里内即恢复"潮而不湿"状态。</p>
+
+  <p><strong>③ VentAir® UPF 50+ 贴身针织（Meridian系列）</strong>：83%尼龙 + 17%氨纶，125 gsm超轻克重，四向弹力。关键技术在于"venting technology"——一种通过纱线排列在面料内部构建微型空气通道的织造方式，汗液通过毛细作用从皮肤表面被"拉"到面料外侧蒸发，而非停留在内侧。配合UPF 50+防护，实现热天"不贴、不粘、不晒"三合一。</p>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/1594/4353/files/Summer26-Mens-Meridian-Tee-Ivory.png?crop=faces&amp;dpr=2&amp;fit=crop&amp;h=520&amp;v=1778876044&amp;w=520" alt="Meridian Tee Ivory" loading="lazy">
+    <div class="caption">▲ Meridian Tee — Ivory配色正视图</div>
+    <div class="caption-desc">83%尼龙 + 17%氨纶，125gsm超轻四向弹力针织。VentAir® venting technology加速汗液外导</div>
+  </div>
+
+  <div class="fig">
+    <img src="https://cdn-image.tracksmith.com/1779129175-ts_spring1_oregon_14222-1-15.png?auto=format,compress" alt="Meridian 系列场景图" loading="lazy">
+    <div class="caption">▲ Meridian 系列户外实穿场景</div>
+    <div class="caption-desc">Oregon户外拍摄，展示Meridian Tank在大运动量下的贴合与透气表现</div>
+  </div>
+</div>
+
+<!-- 功能细节 -->
+<div class="dim">
+  <h3>四、功能细节</h3>
+
+  <p><strong>泳跑双模口袋系统（RCR Shorts）</strong>：两个开放式插手袋 + 右侧口袋内置弹力钥匙绳环（internal bungee loop），确保钥匙在全速奔跑和跳湖游泳时均不脱落。内衬另设独立嵌入式后中口袋，可用于收纳小物。这套口袋布局的亮点在于<strong>浸水锁定设计</strong>：bungee loop在湿态下弹性不变，拉链口袋则刻意被省略——因为水中拉链容易卡住盐粒或沙粒。</p>
+
+  <p><strong>Polygiene® 抑菌内衬（Twilight Shorts）</strong>：Twilight Shorts的内衬采用Polygiene®抗菌处理，核心差异化在于内衬同时配置了<strong>3个内置凝胶口袋</strong>——两个侧袋放能量胶，一个中后袋放手机。后腰外置拉链手机袋 + 腰带内嵌抽绳，在极简外观下实现5口袋布局。注意：Polygiene®与FlipBelt飞比特已有的抑菌方案属同类技术，但其<strong>口袋布局设计（外拉链+内凝胶袋+内衬手机袋三区独立）</strong>值得关注。</p>
+
+  <p><strong>Meridian Speed Shorts "零口袋"设计</strong>：作为Meridian系列的分支，Speed Shorts刻意剥离所有口袋，仅保留最基本的短裤结构。产品逻辑是：对于间歇跑、节奏跑等短时高强度场景，跑者通常使用腰包或背心携带物品，短裤上的口袋反而增加重量和摩擦。这种<strong>"减法设计"</strong>是对"每条短裤必须有口袋"的行业惯例的反思。</p>
+
+  <div class="fig">
+    <img src="https://cdn-image.tracksmith.com/1773358712-portrait-carousel.jpg?auto=format,compress" alt="Twilight Shorts 正面" loading="lazy">
+    <div class="caption">▲ Twilight Shorts — 5"内缝轻量梭织短裤</div>
+    <div class="caption-desc">腰部抽褶（shirring）+ 外露弹力腰带 + 后中拉链手机袋，内置Polygiene®内衬</div>
+  </div>
+
+  <div class="fig">
+    <img src="https://cdn-image.tracksmith.com/1773358710-2026-spring2-tucson_em_mon_015323-1.jpg?auto=format,compress" alt="Twilight Shorts 动态" loading="lazy">
+    <div class="caption">▲ Twilight Shorts 跑步动态抓拍</div>
+    <div class="caption-desc">侧缝开衩释放大步幅空间，3个内置凝胶口袋 + 后拉链袋形成独立储物区</div>
+  </div>
+</div>
+
+<!-- ========== DIVIDER ========== -->
+<hr class="divider">
+
+<!-- ========== DOMESTIC: 内道 ========== -->
+<div class="domestic-section">
+<div class="section-header">
+  <div class="sec-tag orange">国内品牌 · 深度分析</div>
+  <h2>内道 NEDAO — HexRise蜂核科技 · 柔风5.0系列</h2>
+  <div class="colec">含聚能卷系列 · 破土风洞坎肩</div>
+</div>
+
+<p style="font-size:14px;color:#868e96;margin-bottom:24px;font-style:italic;">
+⚠ 以下仅分析飞比特尚未具备的差异化创新点。内道与飞比特在柔风系列分区风洞、Body Mapping透气分区、5A级抗菌等维度的技术重叠部分已跳过。
+</p>
+
+<!-- 版型与剪裁 -->
+<div class="dim">
+  <h3>一、版型与剪裁</h3>
+
+  <p><strong>极致轻量化竞速剪裁</strong>：柔风马拉松背心（柔风5.0）仅重<strong>M码38克</strong>，达到当前国内马拉松背心品类的顶级轻量化水准。实现这个克重的关键是<strong>无折边工艺 + 激光切割边缘</strong>——领口、袖口、下摆全部取消传统折边缝合，以激光切割后热定型替代。这对裁剪精度要求极高，偏差超过0.5mm就会导致边缘卷曲或撕裂。内道能做到这一点，核心在于其背后有Gearlab耐力运动实验室的打版能力支撑。</p>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/0758/9740/5728/files/6_dd01f679-b26e-4de6-a6ee-fdd57e2fdfe3.jpg?v=1785692917" alt="QiFlow柔风无袖背心 男款正面" loading="lazy">
+    <div class="caption">▲ QiFlow柔风无袖背心 — 男款正面</div>
+    <div class="caption-desc">38克级极致轻量化，激光切割无折边边缘，领口/袖口/下摆全部取消传统折边缝合</div>
+  </div>
+
+  <p><strong>女性独立版型体系</strong>：内道是国内少数为女性跑者建立了完整独立版型数据库的跑步品牌。柔风坎肩在女款上做了<strong>胸部防凸点遮挡内层</strong>（在双侧胸口位置用高密度编织覆盖，而非额外缝入内衬垫片），以及<strong>下摆前短后长剪裁</strong>匹配女性骨盆前倾的跑步姿态。这种"跑者人体工学剪裁"不是简单的XS/S/M缩放，而是基于精英女跑者的动态3D扫描数据进行板型修正——飞比特目前在女性专用版型打磨上仍有提升空间。</p>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/0758/9740/5728/files/fe226e1204fc9f1fab5b790b7a7920f8.jpg?v=1785694965" alt="QiFlow柔风无袖背心 女款正面" loading="lazy">
+    <div class="caption">▲ QiFlow柔风无袖背心 — 女款正面</div>
+    <div class="caption-desc">女性独立版型：下摆前短后长匹配骨盆前倾姿态，胸部防凸点遮挡内层采用高密度编织而非额外衬垫</div>
+  </div>
+
+  <div class="hl-box">
+    <strong>飞比特可借鉴：</strong>极致轻量化竞速剪裁（38g级背心）和无折边激光切割边缘工艺，以及基于女性跑者动态3D扫描数据的独立版型开发方法论。
+  </div>
+</div>
+
+<!-- 印花与图案 -->
+<div class="dim">
+  <h3>二、印花与图案</h3>
+
+  <p><strong>"生命热图"配色逻辑</strong>：内道2026年推出的"生命热图风洞背心"采用了一种独特的配色方法——<strong>将人体运动红外热成像图转译为面料印花</strong>。背心上的桔红色到深蓝渐变并非随机设计，而是基于马拉松跑者运动中的真实热成像数据：前胸（高温区）→ 桔红浓烈，腋下（高温高湿区）→ 珊瑚橙，腹部（中温区）→ 过渡色，侧腰（低温区）→ 深蓝。每件背心的色块分布因尺码不同而有差异，因为不同体型的体表温度分布不同。</p>
+
+  <p>这个设计不是在面料成品上印刷，而是通过<strong>纱线染色+提花织造</strong>实现——在不同区域使用不同颜色纱线进行编织，因此图案永不褪色、不受水洗影响。对飞比特而言，这种"数据驱动配色"的思路值得关注：不是为好看而配色，而是让颜色本身传递功能信息。</p>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/0758/9740/5728/files/13_ef4231b5-3128-4502-9bfe-3bdf4ca9a416.jpg?v=1785692917" alt="柔风背心多配色展示" loading="lazy">
+    <div class="caption">▲ 柔风背心多配色方案</div>
+    <div class="caption-desc">配色基于跑者运动红外热成像数据：高温区用暖色（桔红/珊瑚橙），低温区用冷色（深蓝），数据驱动配色而非随机设计</div>
+  </div>
+
+  <p><strong>竞速背心的极简视觉策略</strong>：柔风5.0采用"零品牌标识"设计——正面没有任何logo或文字，品牌仅在后领处使用同色压花呈现"NEDAO"字样。这种"让跑者成为赛道主角"的视觉哲学在精英跑者群体中反响积极。</p>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/0758/9740/5728/files/2_7ffb3821-9ecb-4f33-a935-cf6a442d9bab.jpg?v=1785694965" alt="柔风背心女款配色细节" loading="lazy">
+    <div class="caption">▲ 柔风背心女款配色细节</div>
+    <div class="caption-desc">零品牌标识设计——正面无logo无文字，品牌仅在后领处同色压花呈现，极简视觉策略</div>
+  </div>
+
+  <div class="hl-box">
+    <strong>飞比特可借鉴：</strong>基于人体热成像数据的"数据驱动配色"方案，将科学数据可视化转化为面料色彩设计，且通过提花织造（而非后整印花）实现。
+  </div>
+</div>
+
+<!-- 面料与技术 -->
+<div class="dim">
+  <h3>三、面料与技术</h3>
+
+  <p><strong>HexRise蜂核科技——"会变身"的面料（2025 ISPO全球获奖）：</strong>这是内道目前最核心的差异化技术资产。HexRise面料在干燥状态下是普通的二维平面网格结构；一旦吸汗，纤维吸水膨胀，面料<strong>自动从二维网格转变为三维蜂窝立体结构</strong>——蜂窝凸起将面料撑离皮肤表面，在身体与面料之间形成约1.5-2mm的空气间隙。这个间隙既是散热通道，也是减摩擦缓冲层。</p>
+
+  <p class="hl-box">
+    <strong>关键技术参数：</strong>HexRise面料在吸湿状态下，皮肤接触面积相比常规速干面料减少约40-50%。这种"干态平贴、湿态立体"的智能响应行为，是目前行业里少有的面料级自适应技术。与传统的"打孔透气"（物理开孔，被动透气）相比，HexRise是"材料行为驱动的主动透气"——面料自己"感知"出汗并改变结构。
+  </p>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/0758/9740/5728/files/7_3b9f5a23-0eb8-441b-9c52-3fa48c49e6bd.jpg?v=1763779784" alt="蜂核跑步长袖正面" loading="lazy">
+    <div class="caption">▲ HexRise蜂核跑步长袖 — 正面</div>
+    <div class="caption-desc">干态时2D平面网格结构，吸汗后面料纤维膨胀自动转变为3D蜂窝立体结构，减少皮肤接触面积40-50%</div>
+  </div>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/0758/9740/5728/files/43cf52b5eb6e0018c8022198931df293_1c8b35d6-cdc5-4a1d-ac66-9456b3c0f4ee.png?v=1763778107" alt="蜂核面料技术说明图" loading="lazy">
+    <div class="caption">▲ HexRise蜂核面料技术原理图</div>
+    <div class="caption-desc">左：干燥状态2D平面贴肤 → 右：吸湿后3D蜂窝凸起撑离皮肤，形成1.5-2mm空气间隙，兼具散热与减摩擦功能</div>
+  </div>
+
+  <p><strong>聚能卷系列——日本进口"湿态保暖"面料：</strong>这是内道技术路线中另一个飞比特尚未覆盖的方向。传统保暖面料在吸汗后会丧失大部分保暖能力（水取代了纤维间的静止空气）。聚能卷采用的日本进口面料通过<strong>中空卷曲纤维结构</strong>，纤维内部锁住的空气层在湿态下不会被水完全置换——实测在面料含湿量达到30%时，仍能保持干燥状态约65%的保暖效率。这个性能对于秋冬跑步中大量出汗后的"后半程保暖"至关重要。</p>
+
+</div>
+
+<!-- 功能细节 -->
+<div class="dim">
+  <h3>四、功能细节</h3>
+
+  <p><strong>胸部防凸点编织技术：</strong>柔风背心5.0在女款双侧胸口区域做了<strong>高密度加密编织</strong>——不是额外缝入衬垫或插片，而是直接在同一块面料的编织阶段增加该区域的纱线密度和织法复杂度。效果是：该区域不透光、不凸点，但透气性和整体克重不受影响。这个方案消除了传统运动内衣衬垫的摩擦、移位和洗涤变形问题。</p>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/0758/9740/5728/files/16_fc9bd682-b901-4328-923d-c1bd25c79c98.jpg?v=1785692917" alt="柔风背心功能细节" loading="lazy">
+    <div class="caption">▲ 柔风背心功能细节展示</div>
+    <div class="caption-desc">女款胸部防凸点加密编织区：同块面料编织阶段增加纱线密度，不额外缝入衬垫，零摩擦零移位零洗涤变形</div>
+  </div>
+
+  <p><strong>内层磨毛防摩擦处理：</strong>柔风背心内侧（贴肤面）做了<strong>微观磨毛处理</strong>——不是起绒，而是将纤维末端做轻度毛羽化，使触感从"塑料滑"变为"棉质柔"。实测在马拉松长时间穿着中，这个处理显著减少了乳头摩擦和锁骨区域的皮肤刺激。该工艺的关键难点在于控制磨毛深度：太浅无效，太深会堵塞透气孔。</p>
+
+  <div class="fig">
+    <img src="https://cdn.shopify.com/s/files/1/0758/9740/5728/files/1eae7ae6ce239862c44d09c80b59d31e.png?v=1763778120" alt="蜂核长袖内层磨毛处理" loading="lazy">
+    <div class="caption">▲ 蜂核长袖内层磨毛处理细节</div>
+    <div class="caption-desc">贴肤面微观磨毛处理：纤维末端轻度毛羽化，触感从"塑料滑"变为"棉质柔"，减少马拉松长时间穿着的乳头与锁骨摩擦</div>
+  </div>
+
+  <p><strong>手表仓设计：</strong>内道部分长袖和长裤款式在手袖/脚踝处设计了<strong>手表视窗开口</strong>——跑者可以在不掀起袖子的情况下直接看到GPS手表数据。飞比特训练长袖4.0已有手表视窗，此处不展开。</p>
+
+  <div class="hl-box">
+    <strong>飞比特可借鉴：</strong>一体编织的胸部防凸点加密区技术（零衬垫方案），以及内层微观磨毛防摩擦工艺，这两个细节直接提升女性跑者的穿着体验。
+  </div>
+</div>
+</div>
+
+<!-- ========== 设计借鉴点 ========== -->
+<div class="takeaways">
+  <h3>设计借鉴点（3条）</h3>
+
+  <div class="takeaway-item">
+    <div class="src blue">来源：Tracksmith</div>
+    <h4>跨场景面料混纺方法论 — 日本高性能亚麻 × Coolmax®</h4>
+    <p>Tracksmith将"非运动面料"（亚麻）通过技术纤维（Coolmax® + 涤纶骨架）重新工程化为跑步级别面料，实现了"跑步-社交-旅行"三场景的无缝切换。飞比特可以探索将天然纤维（竹纤维、天丝、麻）通过混纺工程化改造为跑步面料，打破"运动=化纤"的固有认知。核心切入点是面料触感差异化——"不像运动服的运动服"。</p>
+  </div>
+
+  <div class="takeaway-item">
+    <div class="src blue">来源：Tracksmith</div>
+    <h4>泳跑两栖产品定位 — PFC-free DWR速干 + 浸水锁物系统</h4>
+    <p>RCR Shorts开创了"泳跑两栖短裤"这个细分品类——不是一条可以游泳的跑步短裤，而是专门为"跑步中游泳、游泳后跑步"设计的装备。飞比特可以探索"水陆两栖"概念：DWR处理腰包裤面料 + 浸水安全钥匙锁扣 + 快干内衬，满足越野跑中涉水/溯溪/湖泳的场景需求。</p>
+  </div>
+
+  <div class="takeaway-item">
+    <div class="src orange">来源：内道 NEDAO</div>
+    <h4>HexRise 蜂核科技 — 面料级自适应形变，而非被动打孔透气</h4>
+    <p>HexRise代表了透气技术的范式转移：从"在面料上开孔"到"面料自己根据湿度改变结构"。飞比特当前的风洞透气属于前一个范式。可以研究引入类似的热湿响应纤维或织造结构，实现"汗出则通、汗止则平"的智能透气，这比固定孔径的风洞方案在高湿场景下有明显代际优势。</p>
+  </div>
+</div>
+
+<!-- ========== 设计启发 ========== -->
+<div class="inspirations">
+  <h3>设计启发建议（3条）</h3>
+
+  <div class="insp">
+    <h4>方向一：面料触感差异化 — "不像运动服的运动服"</h4>
+    <p>结合Tracksmith亚麻跑步衬衫和内道磨毛内层的思路，探索开发一条"触感优先"的产品线。使用竹纤维混纺、桃皮绒磨毛内层、亚麻混纺等面料手段，满足进阶跑者对"非塑料感"运动服饰的需求。目标人群是注重日常穿搭质感、跑步后不换装直接社交的跑者。</p>
+  </div>
+
+  <div class="insp">
+    <h4>方向二：水陆两栖产品线 — 越野跑 × 户外涉水</h4>
+    <p>飞比特已有越野产品线和DWR防泼水能力，可以在此基础上延伸"水陆两栖"概念：开发PFC-free DWR处理的腰包裤面料版本 + 浸水安全钥匙收纳方案 + 轻盈快干内衬。定位为"可以跳进山涧溪流、上岸后10分钟内恢复干爽"的越野跑裤，差异化竞争于传统的纯陆地越野装备。</p>
+  </div>
+
+  <div class="insp">
+    <h4>方向三：数据驱动的色彩设计 — 让颜色传递功能信号</h4>
+    <p>借鉴内道"生命热图"的数据可视化配色方法论，但走飞比特自己的方向——例如基于跑步步态压力热力图设计压缩裤印花、基于城市夜跑光环境数据设计反光配色方案、基于季节紫外线指数设计UPF防护区域的颜色深度编码。让颜色不再只是装饰，而是功能的"可视化说明书"。</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>FlipBelt飞比特 竞品设计情报</strong> · 仅供内部设计团队参考 · 2026年8月10日</p>
+  <p style="margin-top:4px;">数据来源：Tracksmith官网、内道天猫/京东旗舰店、Huck Adventures实测、今日头条、什么值得买、ISPO官方</p>
+</div>
+
+</div>
+
+</body></html>
