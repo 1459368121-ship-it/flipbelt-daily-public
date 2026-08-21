@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飞比特竞品分析日报 · 2026-08-07</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: #f5f5f7; color: #1d1d1f; line-height: 1.7;
+    max-width: 860px; margin: 0 auto; padding: 20px;
+  }
+
+  /* Header */
+  .header { text-align: center; padding: 24px 0 20px; border-bottom: 2px solid #e5e5e7; margin-bottom: 24px; }
+  .header .date { font-size: 12px; color: #86868b; letter-spacing: 1px; }
+  .header h1 { font-size: 22px; font-weight: 700; margin-top: 6px; letter-spacing: -0.5px; }
+
+  /* Brand Tags */
+  .tag-foreign { display: inline-block; background: #dbeafe; color: #1e40af; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+  .tag-domestic { display: inline-block; background: #fed7aa; color: #9a3412; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+
+  /* Product Overview Cards */
+  .overview { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+  .product-card { background: #fff; border-radius: 10px; padding: 16px; border: 1px solid #e5e5e7; }
+  .product-card .brand-row { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+  .product-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .product-card .meta-list { font-size: 12px; color: #6b7280; line-height: 1.8; }
+  .product-card .meta-list span { font-weight: 500; color: #374151; }
+
+  /* Section */
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-left: 10px; border-left: 3px solid #1d1d1f; }
+
+  /* Dimension Block */
+  .dim-block { margin-bottom: 22px; }
+  .dim-block h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .dim-tag { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.5px; }
+  .dim-tag-cut { background: #ede9fe; color: #6d28d9; }
+  .dim-tag-print { background: #fce7f3; color: #be185d; }
+  .dim-tag-fabric { background: #cffafe; color: #0e7490; }
+  .dim-tag-detail { background: #fef3c7; color: #b45309; }
+
+  /* Brand sub-label inside dimension */
+  .brand-label { font-size: 13px; font-weight: 700; margin: 10px 0 4px; }
+  .brand-foreign { color: #1e40af; }
+  .brand-domestic { color: #c2410c; }
+
+  /* Image Card - full width */
+  .img-card { margin: 8px 0 12px; }
+  .img-card img { width: 100%; border-radius: 8px; background: #f0f0f3; display: block; }
+  .img-card .cap { font-size: 12px; color: #6b7280; margin-top: 5px; padding: 0 2px; line-height: 1.5; }
+  .img-card .cap strong { color: #1d1d1f; }
+
+  /* Analysis text */
+  .dim-block p { font-size: 13px; color: #374151; line-height: 1.75; margin-bottom: 6px; }
+  .kw { font-weight: 600; color: #1d1d1f; }
+  .hl { background: #fde68a; padding: 0 3px; border-radius: 2px; }
+
+  /* Data box */
+  .data-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+  .data-box h5 { font-size: 12px; font-weight: 700; margin-bottom: 6px; color: #475569; }
+  .data-row { display: flex; justify-content: space-between; font-size: 12px; padding: 3px 0; border-bottom: 1px solid #f1f5f9; }
+  .data-row:last-child { border-bottom: none; }
+  .data-row .v { font-weight: 700; color: #0e7490; }
+
+  /* Takeaway */
+  .tk { background: #fff; border-left: 3px solid #8b5cf6; padding: 10px 14px; margin-bottom: 8px; border-radius: 0 6px 6px 0; font-size: 13px; line-height: 1.7; }
+  .tk .src { font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+  .tk .src-foreign { background: #dbeafe; color: #1e40af; }
+  .tk .src-domestic { background: #fed7aa; color: #9a3412; }
+
+  /* Suggestion */
+  .sg { background: #fff; border-left: 3px solid #10b981; padding: 10px 14px; margin-bottom: 8px; border-radius: 0 6px 6px 0; font-size: 13px; line-height: 1.7; }
+  .sg .num { display: inline-block; background: #10b981; color: #fff; width: 20px; height: 20px; border-radius: 50%; text-align: center; line-height: 20px; font-size: 11px; font-weight: 700; margin-right: 6px; }
+
+  /* Divider */
+  .divider { height: 1px; background: #e5e5e7; margin: 24px 0; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .overview { grid-template-columns: 1fr; }
+  }
+</style>
+</head><body>
+
+<div class="header">
+  <div class="date">2026年8月7日 · 第002期</div>
+  <h1>飞比特竞品分析日报</h1>
+</div>
+
+<!-- Product Overview -->
+<div class="overview">
+  <div class="product-card">
+    <div class="brand-row">
+      <span class="tag-foreign">国外</span>
+      <span style="font-size:12px;color:#86868b;">Bandit Running · 美国布鲁克林</span>
+    </div>
+    <h3>Spring 2026 "Quiet Miles" 系列</h3>
+    <div class="meta-list">
+      <span>核心单品：</span>Vento™ Split Short / Cadence™ 7-Pocket Half Tights / Specter™ Tee<br>
+      <span>价格：</span>Tee $82 / Short $84 / Half Tights $108<br>
+      <span>发布季：</span>2026 Spring
+    </div>
+  </div>
+  <div class="product-card">
+    <div class="brand-row">
+      <span class="tag-domestic">国内</span>
+      <span style="font-size:12px;color:#86868b;">粒子狂热 Particle Fever · 上海</span>
+    </div>
+    <h3>"自适应气候"系列 &amp; 2026 Studio系列</h3>
+    <div class="meta-list">
+      <span>核心创新：</span>航天服级PCM相变材料 / 不对称解构剪裁<br>
+      <span>价格：</span>内衣 ¥249-449 / 外套 ¥439-729 / 紧身裤 ¥306-699<br>
+      <span>发布季：</span>2026年1月 / 6月
+    </div>
+  </div>
+</div>
+
+<!-- ===== 国外篇：Bandit Running ===== -->
+<div class="section">
+  <div class="section-title"><span class="tag-foreign">国外</span> Bandit Running — Spring 2026 "Quiet Miles"</div>
+
+  <div class="dim-block">
+    <h4>版型与剪裁 <span class="dim-tag dim-tag-cut">CUT</span></h4>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/84cdbec6-150b-46c0-b141-0186ab5d8739_4000x.png?v=1777060141" alt="Bandit Vento Split Short Front">
+      <div class="cap"><strong>Vento™ Next Gen 3" Split Short 正面</strong> · 粘合腰头+Coolcore®内衬，3英寸开衩裤长</div>
+    </div>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/82770122-1e67-4c5a-9c29-2ede057a1a12_081edf6e-d145-4573-bd54-274a0526f8f4_4000x.png?v=1777060138" alt="Bandit Vento Side">
+      <div class="cap"><strong>Vento™ 侧面</strong> · 开衩剪裁可见，腰头无松紧带缝合线</div>
+    </div>
+    <p><span class="kw">粘合腰头</span>：无松紧带缝合，直接粘合，消除卷边勒痕。内衬可稳固容纳手机+能量胶，无需额外腰包。3英寸开衩兼顾自由度与覆盖。</p>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/5_6_Collection_Hero_8ea79b83-80b9-41b4-ae8a-5c1d7cefe841_4000x.png?v=1755735119" alt="Bandit Cadence Half Tights">
+      <div class="cap"><strong>Cadence™ 7-Pocket Half Tights</strong> · 压缩半裤正面，条纹面料纹理可见</div>
+    </div>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/5_6_Collection_Hero_-1_b62909bf-b92c-45a3-8bc4-d59a88426672_4000x.png?v=1755735119" alt="Bandit Cadence Detail">
+      <div class="cap"><strong>Cadence™ 细节</strong> · 可见侧袋位置与裤脚防滑胶点</div>
+    </div>
+    <p><span class="kw">Cadence™ 7口袋压缩半裤</span>：2个iPhone尺寸侧袋（防水内衬）+ 后中拉链袋 + 多个能量胶位，越野背心级收纳塞进压缩裤。<span class="hl">定制防滑胶点</span>替代整圈硅胶条，面料在胶点间自然松弛，避免紧绷。</p>
+  </div>
+
+  <div class="dim-block">
+    <h4>印花与图案 <span class="dim-tag dim-tag-print">PRINT</span></h4>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/fd9f4cc2-0e5b-486c-bb0f-40e220cca509_4000x.png?v=1780577771" alt="Bandit Specter Tee Front">
+      <div class="cap"><strong>Specter™ Tee with Flopack™ 正面</strong> · 前胸双色反光几何图腾，低饱和色调</div>
+    </div>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/5f5da294-3ac8-4e5f-920b-25dc629a5fb3_4000x.png?v=1780577768" alt="Bandit Specter Tee Back">
+      <div class="cap"><strong>Specter™ Tee 背面</strong> · Flopack™导流开衩可见——压胶开衩嵌入撞色织带</div>
+    </div>
+    <p><span class="kw">Flopack™ 导流开衩</span>：背部角度缝线处压胶开衩，嵌入撞色织带，形成物理通风口而非印花装饰。<span class="hl">双色反光几何图腾</span>在前胸后背中心，低调日常+夜间反光双功能。色调低饱和（Poppy Multi / Slate / Plaster），走insider辨识路线。</p>
+  </div>
+
+  <div class="dim-block">
+    <h4>面料与技术 <span class="dim-tag dim-tag-fabric">FABRIC</span></h4>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/b08c2558-dcb2-4cf2-ad16-441ba3e9492c_4000x.png?v=1777060138" alt="Bandit Vento Fabric Detail">
+      <div class="cap"><strong>Vento™ Short 面料细节</strong> · Coolcore®温控内衬+粘合腰头工艺</div>
+    </div>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/9e1bfb7f-57d1-46ba-9336-ddba060347fb_4000x.png?v=1780577768" alt="Bandit Specter Fabric">
+      <div class="cap"><strong>Specter™ 面料质感</strong> · 85gsm全消光涤纶，哑光粉感触感，防粘身</div>
+    </div>
+    <div class="data-box">
+      <h5>Spring 2026 面料矩阵</h5>
+      <div class="data-row"><span>Specter™（男Tee/背心）</span><span class="v">85gsm 全消光涤纶，粉感触感，防粘身</span></div>
+      <div class="data-row"><span>Stamina-V™（女压缩/内衣）</span><span class="v">出汗前排湿，温控调节</span></div>
+      <div class="data-row"><span>Coolcore®（短裤内衬）</span><span class="v">温控凉感，解决夏季闷热</span></div>
+    </div>
+    <p><span class="kw">Specter™ 核心纱线</span>：全消光拉伸变形涤纶丝，哑光粉感触感，85gsm极致轻薄。靠纱线物理结构防粘身，不靠涂层。</p>
+  </div>
+
+  <div class="dim-block">
+    <h4>功能细节 <span class="dim-tag dim-tag-detail">DETAIL</span></h4>
+    <div class="img-card">
+      <img src="https://banditrunning.com/cdn/shop/files/263bdfbc-923e-4288-ad8f-b79246017163_4000x.png?v=1777060139" alt="Bandit Vento Pocket Detail">
+      <div class="cap"><strong>Vento™ 收纳细节</strong> · 内衬口袋可放手机+能量胶，腰头粘合工艺无缝合线</div>
+    </div>
+    <p><span class="kw">AcroFuse™ 微点粘合接缝</span>：精密点胶机在面料边缘施加微点胶，颈部和袖窿可做锐角曲线不起皱。比缝线更平整、更耐弯折、更低摩擦。</p>
+    <p><span class="kw">7口袋布局</span>：2个iPhone侧袋（防水内衬）+ 1个后中拉链袋 + 4个能量胶位，跑动不晃动不显形。<span class="hl">裤子即腰包</span>，长距离训练无需额外装备。</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== 国内篇：粒子狂热 Particle Fever ===== -->
+<div class="section">
+  <div class="section-title"><span class="tag-domestic">国内</span> 粒子狂热 Particle Fever — "自适应气候" &amp; 2026 Studio系列</div>
+
+  <div class="data-box">
+    <h5>品牌概况</h5>
+    <div class="data-row"><span>品牌全称</span><span class="v">Particle Fever 粒子狂热（上海尺间科技有限公司）</span></div>
+    <div class="data-row"><span>创立时间</span><span class="v">2014年 · 上海</span></div>
+    <div class="data-row"><span>品牌定位</span><span class="v">设计师运动品牌，"运动穿着实验场"</span></div>
+    <div class="data-row"><span>核心人群</span><span class="v">都市运动女性，兼顾专业习练与日常穿搭</span></div>
+    <div class="data-row"><span>天猫旗舰店</span><span class="v">particlefever.tmall.com</span></div>
+  </div>
+  <p style="font-size:12px;color:#86868b;margin-top:-4px;margin-bottom:14px;">注：以下分析聚焦飞比特尚未具备的差异化创新点，重叠功能（Air-fit凉感抗菌、异形纤维导汗、无外侧缝、四向高弹等）已跳过。粒子狂热其他产品图请前往天猫旗舰店查看。</p>
+
+  <div class="dim-block">
+    <h4>面料与技术 <span class="dim-tag dim-tag-fabric">FABRIC</span></h4>
+    <p><span class="kw">PCM相变材料 — "自适应气候"系列（核心创新）</span>：粒子狂热推出的"自适应气候"系列，采用<span class="hl">源自航天服填充材料的相变材料（Phase Change Material）</span>。PCM的工作原理与传统面料截然不同——它在特定温度区间内通过固液相变<strong>主动吸热或放热</strong>，维持体表微气候稳定。当体表温度升高时，PCM吸收多余热量（熔化）；当温度下降时，PCM释放储存的热量（结晶），实现双向温控。</p>
+
+    <img src="https://q9.itc.cn/q_70/images03/20260618/256a074f47bf424e89bcfbfd2686e49d.jpeg" alt="粒子狂热 2026 Studio 不对称斜摆长Tee" style="width:100%;height:auto;object-fit:contain;display:block;margin:14px 0 6px;border-radius:6px;">
+    <p style="font-size:12px;color:#374151;font-weight:600;margin-bottom:8px;">2026 Studio系列 · 不对称斜摆长袖Tee（图片来源：搜狐时尚报道）</p>
+
+    <p>飞比特现有的温控技术（Aqua凉感、COOLMAX导汗、LYCRA® THERMOLITE保暖）本质上都是<strong>被动散热或被动保暖</strong>——靠纤维截面导湿、靠面料结构透气、靠面料材质保温。PCM是<strong>主动温控</strong>，材料本身具有温度响应能力，不依赖空气流通和汗液蒸发。这在春秋季温差大的跑步场景（晨跑出发冷→跑热了→停下拉伸又冷）有直接应用价值。</p>
+
+    <p style="margin-top:10px;"><span class="kw">以下功能与飞比特重叠，跳过不讲</span>：Air-fit凉感抗菌（≈Aqua凉感+银离子抗菌）、异形纤维导汗（≈COOLMAX异型截面纱线）、无外侧缝（≈Bemis®无缝热压）、四向高弹（≈LYCRA® SPORT）。</p>
+  </div>
+
+  <div class="dim-block">
+    <h4>版型与剪裁 <span class="dim-tag dim-tag-cut">CUT</span></h4>
+    <p><span class="kw">不对称斜摆设计</span>：2026 Studio系列的长袖罩衫采用不对称斜摆剪裁，打破运动服传统的对称惯例。这种<strong>时装解构设计语言</strong>引入运动服饰，让单品在功能性与审美表达之间找到新平衡。飞比特目前的设计以功能对称为主，不对称美学可作为设计语言的拓展方向。</p>
+    <p><span class="kw">无压宽松版型</span>：Studio系列主打"松弛感"，无压宽松剪裁适配低强度运动+日常通勤多场景切换。与飞比特专注的"功能贴合"路线不同，这是"去运动感"的设计策略——弱化专业运动视觉信号，扩大穿着场景。</p>
+  </div>
+
+  <div class="dim-block">
+    <h4>印花与图案 <span class="dim-tag dim-tag-print">PRINT</span></h4>
+    <p><span class="kw">废土印花（Wasteland Print）</span>：粒子狂热的废土印花系列以后末日美学为视觉语言，低饱和度色调搭配做旧质感纹理。这不是简单的图案印花，而是<strong>一套完整的视觉世界观</strong>——将科幻废土美学注入运动服饰，形成强烈品牌辨识度。飞比特目前的印花以功能导向（反光、透气孔）为主，缺乏这种风格化的视觉系列。</p>
+    <p><span class="kw">低饱和极简配色策略</span>：全系采用低饱和度配色（暖茶棕/烟灰色/古着藏蓝/胡桃木），弱化运动感，适配通勤穿搭场景。配色命名走"情绪化"路线（废土牛仔/奶油灵蛇纹/岩石灰牛仔），而非传统的"藏青/白色/黑色"功能化命名。</p>
+  </div>
+
+  <div class="dim-block">
+    <h4>功能细节 <span class="dim-tag dim-tag-detail">DETAIL</span></h4>
+    <p><span class="kw">可拆卸透气水滴胸垫</span>：Studio系列吊带bra搭载可拆卸水滴形透气胸垫，用户可根据需求安装或拆除。<strong>模块化设计思路</strong>——同一件衣服通过配件增减适配不同强度场景。飞比特目前没有可拆卸模块化配件设计，这一思路可延伸到跑步服饰（如可拆卸口袋模块、可拆卸反光条等）。</p>
+    <p><span class="kw">零感点胶工艺</span>：运动内衣采用点胶工艺替代传统缝线，实现无缝触感。与Bandit的AcroFuse™微点粘合原理类似，但应用于内衣品类。点胶位置和密度经过计算，在支撑性与舒适度之间找平衡。</p>
+  </div>
+</div>
+
+<!-- Design Takeaways -->
+<div class="section">
+  <div class="section-title">设计借鉴点</div>
+  <div class="tk"><span class="src src-foreign">国外</span><strong>7口袋压缩半裤</strong>——把越野背心级收纳量塞进压缩裤，2个iPhone尺寸防水内衬侧袋+后中拉链袋+4个能量胶位，跑动不晃不显形。证明"轻量"和"多口袋"不是零和博弈，"裤子即腰包"思路值得参考。</div>
+  <div class="tk"><span class="src src-foreign">国外</span><strong>AcroFuse™微点粘合接缝</strong>——精密点胶机在面料边缘施加微点胶，颈部和袖窿可做锐角曲线不起皱。比缝线更平整、更耐弯折、更低摩擦，比超声波焊接更灵活。工艺值得调研国内代工厂可行性。</div>
+  <div class="tk"><span class="src src-foreign">国外</span><strong>防滑胶点替代硅胶条</strong>——裤脚内侧点状分布防滑胶，面料在胶点间自然松弛，避免整圈硅胶条的紧绷不适。比传统防滑条更舒适，兼顾固定与自由度。</div>
+  <div class="tk"><span class="src src-foreign">国外</span><strong>Flopack™物理导流开衩</strong>——背部角度缝线处压胶开衩嵌入撞色织带，形成物理通风口而非印花装饰。将结构功能视觉化，兼顾散热与辨识度。</div>
+  <div class="tk"><span class="src src-foreign">国外</span><strong>Specter™全消光变形丝</strong>——85gsm全消光拉伸变形涤纶丝，靠纱线物理结构实现哑光粉感触感和防粘身，不靠涂层。解决传统速干面料出汗后粘身痛点，工艺路径值得追踪。</div>
+  <div class="tk"><span class="src src-domestic">国内</span><strong>PCM相变材料自适应温控</strong>——粒子狂热"自适应气候"系列采用航天服级相变材料，通过固液相变主动吸热/放热，实现双向温控。与飞比特现有的被动散热（导汗/速干/凉感）技术路线完全不同，是"主动温控"赛道的新方向。春秋季温差跑步场景有直接应用价值。</div>
+  <div class="tk"><span class="src src-domestic">国内</span><strong>可拆卸模块化配件设计</strong>——可拆卸水滴胸垫让同一件衣服适配不同强度场景。这一模块化思路可延伸到跑步服饰：可拆卸口袋模块、可拆卸反光条、可拆卸帽兜等，让单品通过配件增减覆盖更多使用场景，与"功能少负担"调性契合。</div>
+  <div class="tk"><span class="src src-domestic">国内</span><strong>废土印花视觉系列化</strong>——粒子狂热用废土印花建立完整的视觉世界观，低饱和色调+做旧质感+情绪化配色命名，形成强品牌辨识度。飞比特目前的印花以功能导向为主，可探索风格化视觉系列作为品牌辨识升级方向。</div>
+</div>
+
+<!-- Design Suggestions -->
+<div class="section">
+  <div class="section-title">设计启发建议</div>
+  <div class="sg"><span class="num">1</span><strong>收纳系统产品化</strong>——Bandit证明"裤子即腰包"可行。压缩半裤/短裤上集成3-5个功能口袋（防水手机袋+能量胶位+拉链贵重物品袋），让跑者长距离训练时无需额外腰包，与"功能少负担"调性高度契合。</div>
+  <div class="sg"><span class="num">2</span><strong>响应型面料技术路线</strong>——Specter™用全消光变形丝纱线结构防粘身，Coolcore®用化学纤维温控调节。说明"面料智能响应"是趋势。可重点调研全消光变形丝和反应型凉感纱线两条技术路径的国内供应链可行性，优先在夏季T恤品类落地。</div>
+  <div class="sg"><span class="num">3</span><strong>接缝工艺升级</strong>——AcroFuse™微点粘合在颈部、袖窿等高摩擦区替代缝线，比传统四针六线更平整、更耐弯折。可在关键摩擦区率先引入热熔微点粘合工艺，作为产品升级的技术卖点，与现有Bemis®无缝热压形成工艺互补。</div>
+  <div class="sg"><span class="num">4</span><strong>PCM相变材料技术预研</strong>——粒子狂热已将航天服级PCM引入运动服饰，证明该技术在运动场景可行。飞比特可启动PCM材料在跑步服饰应用的预研：重点测试春秋季温差跑步场景（晨跑出发10°C→跑热后体表30°C+→停下拉伸降温），评估PCM微胶囊嵌入面料的温控效果和耐洗性，作为"主动温控"品类的技术储备。</div>
+  <div class="sg"><span class="num">5</span><strong>模块化配件系统</strong>——借鉴粒子狂热可拆卸胸垫思路，探索跑步服饰的模块化设计：可拆卸反光条（白天拆掉、夜跑装上）、可拆卸口袋模块（短距离拆掉减重、长距离装上扩容）、可拆卸帽兜（晴天拆掉、雨天装上）。让一件衣服通过配件增减覆盖多场景，深化"功能少负担"理念。</div>
+</div>
+
+
+</body></html>
