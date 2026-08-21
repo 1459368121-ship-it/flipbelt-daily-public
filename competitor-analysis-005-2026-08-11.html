@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飞比特竞品设计分析日报 #005 · 2026-08-11</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: #f8f9fa; color: #1d1d1f; line-height: 1.8;
+    max-width: 720px; margin: 0 auto; padding-bottom: 60px;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fff; padding: 32px 24px 28px; text-align: center;
+  }
+  .header .label {
+    display: inline-block; background: rgba(59,130,246,0.2); color: #93c5fd;
+    font-size: 11px; letter-spacing: 2px; padding: 3px 12px; border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .header .date { font-size: 13px; color: #94a3b8; }
+  .header .meta { margin-top: 14px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .header .meta span { font-size: 12px; color: #94a3b8; }
+
+  /* Overview Cards */
+  .overview { padding: 20px 20px 0; display: flex; gap: 14px; }
+  .ov-card {
+    flex: 1; border-radius: 12px; padding: 18px; text-align: center;
+    border: 1px solid #e5e5e7; background: #fff;
+  }
+  .ov-card.foreign { border-top: 3px solid #3b82f6; }
+  .ov-card.domestic { border-top: 3px solid #f97316; }
+  .ov-card .brand-tag {
+    display: inline-block; font-size: 10px; letter-spacing: 1.5px; font-weight: 700;
+    padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; text-transform: uppercase;
+  }
+  .ov-card.foreign .brand-tag { background: #dbeafe; color: #1e40af; }
+  .ov-card.domestic .brand-tag { background: #fed7aa; color: #9a3412; }
+  .ov-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .ov-card .ov-sub { font-size: 12px; color: #6b7280; line-height: 1.5; }
+  @media (max-width: 500px) { .overview { flex-direction: column; } }
+
+  /* Sections */
+  .section { padding: 28px 20px 12px; }
+  .section-title {
+    font-size: 18px; font-weight: 700; margin-bottom: 4px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title .flag { font-size: 20px; }
+  .section-subtitle { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
+
+  /* Content blocks */
+  .block { margin-bottom: 28px; }
+  .block h3 {
+    font-size: 15px; font-weight: 700; color: #111827;
+    border-left: 3px solid #3b82f6; padding-left: 10px; margin-bottom: 10px;
+  }
+  .domestic-section .block h3 { border-left-color: #f97316; }
+  .block p { font-size: 14px; color: #374151; line-height: 1.8; margin-bottom: 12px; }
+  .block img {
+    width: 100%; object-fit: contain; border-radius: 8px;
+    margin-bottom: 6px; border: 1px solid #f1f1f1;
+  }
+  .block .img-caption {
+    font-size: 12px; color: #6b7280; font-weight: 600;
+    margin-bottom: 14px; text-align: center;
+  }
+
+  /* Divider */
+  .divider { margin: 12px 20px; height: 1px; background: linear-gradient(90deg, transparent, #d1d5db, transparent); }
+
+  /* Takeaways */
+  .takeaways { padding: 8px 20px 20px; }
+  .takeaways h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+  .takeaway-item {
+    background: #fff; border: 1px solid #e5e5e7; border-radius: 10px;
+    padding: 14px 16px; margin-bottom: 10px;
+  }
+  .takeaway-item .tw-label {
+    display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 8px;
+    border-radius: 4px; margin-right: 8px; letter-spacing: 1px;
+  }
+  .tw-label.foreign { background: #dbeafe; color: #1e40af; }
+  .tw-label.domestic { background: #fed7aa; color: #9a3412; }
+  .takeaway-item strong { font-size: 14px; display: block; margin: 6px 0 4px; }
+  .takeaway-item p { font-size: 13px; color: #6b7280; line-height: 1.7; }
+
+  /* Inspiration */
+  .inspiration { padding: 8px 20px 28px; }
+  .inspiration h2 { font-size: 18px; font-weight: 700; margin-bottom: 14px; }
+  .insp-item {
+    background: linear-gradient(135deg, #f0f9ff, #fafafa); border: 1px solid #e0e7ff;
+    border-radius: 10px; padding: 14px 16px; margin-bottom: 10px;
+  }
+  .insp-item strong { font-size: 14px; color: #1e40af; display: block; margin-bottom: 4px; }
+  .insp-item p { font-size: 13px; color: #374151; line-height: 1.7; }
+
+  /* Footer */
+  .report-footer {
+    text-align: center; padding: 20px; font-size: 11px; color: #9ca3af;
+    border-top: 1px solid #e5e5e7; margin: 0 20px;
+  }
+</style>
+</head><body>
+
+<div class="header">
+  <span class="label">FlipBelt飞比特 · 竞品设计情报</span>
+  <h1>竞品设计分析日报</h1>
+  <div class="date">2026年8月11日 · 周二 · #005</div>
+  <div class="meta">
+    <span>国外：Nike</span>
+    <span>国内：李宁</span>
+    <span>四维度全覆盖</span>
+  </div>
+</div>
+
+<!-- Overview Cards -->
+<div class="overview">
+  <div class="ov-card foreign">
+    <span class="brand-tag">Foreign</span>
+    <h3>Nike Aerogami</h3>
+    <div class="ov-sub">AeroSwift Storm-FIT ADV 跑步夹克<br>湿气反应翼形通风口 · Gender-specific 剪裁</div>
+  </div>
+  <div class="ov-card domestic">
+    <span class="brand-tag">Domestic</span>
+    <h3>李宁 LI-NING</h3>
+    <div class="ov-sub">龙雀碳纱竞速背心<br>Resistex Carbon 负氧离子 · 鱼鳞对流面料</div>
+  </div>
+</div>
+
+<!-- ====== FOREIGN: NIKE AEROGAMI ====== -->
+<div class="section">
+  <div class="section-title">
+    <span class="flag">🔵</span> Nike · Aerogami 汗液激活翼形通风系统
+  </div>
+  <div class="section-subtitle">Nike Explore Team (NXT)与Nike Sport Research Lab (NSRL)联合研发的服装自动化透气技术，2023年首发于Run Division Aerogami Jacket，后续迭代至AeroSwift系列。核心技术突破在于：服装无需电池、无需电子元件、无需跑者手动操作，即可通过湿气反应膜(Moisture-Reactive Film)自主感知汗液并自动开闭通风口——这是运动服装从"被动透气"到"主动响应"的范式级转变。</div>
+
+  <!-- Dimension 1: 版型与剪裁 -->
+  <div class="block">
+    <h3>版型与剪裁</h3>
+    <img src="img/nike-aerogami-m-hero.jpg" alt="Nike AeroSwift Men's Storm-FIT Aerogami Running Jacket 正面穿着">
+    <div class="img-caption">▲ Nike AeroSwift Men's Storm-FIT Aerogami Running Jacket 正面穿着 | Comet Blue配色，Standard Fit标准剪裁，胸前的翼形折痕即为Aerogami通风口在闭合状态下的外观</div>
+    <p>Nike AeroSwift Aerogami Jacket 采用<strong>Standard Fit标准剪裁</strong>——介于竞速贴身与宽松训练之间的通用版型，确保夹克内有足够空间容纳中层保暖衣物（如薄绒长袖或羊毛打底）。肩部和大臂区域采用<strong>插肩袖结构</strong>，肩缝前移至锁骨上方约2cm，消除传统肩缝对肩胛活动的限制。这是一件全拉链夹克，弹力袖口(Elastic Cuffs)采用<strong>无魔术贴、无抽绳</strong>的纯弹力收口设计，贴合手腕但不勒紧，减少袖口兜风。</p>
+
+    <img src="img/nike-aerogami-w-front.jpg" alt="Nike Aerogami Women's Jacket 女款正面">
+    <div class="img-caption">▲ Nike Aerogami Women's Jacket 女款正面 | 女款胸口通风口位置明显低于男款，环绕运动内衣所在的高汗区域分布</div>
+    <p>最核心的版型创新在于<strong>Gender-Specific Vent Placement（性别差异化通风口布局）</strong>：</p>
+    <p>• <strong>男款</strong>：翼形通风口集中分布在<strong>上胸和上背部</strong>——对应男性跑者热力图显示的核心高温区域（胸大肌上缘+背阔肌上缘）；<br>
+    • <strong>女款</strong>：通风口位置<strong>整体下移至胸廓中部</strong>，并围绕<strong>运动文胸所在的高汗区域</strong>进行环形分布——这是基于NSRL环境舱测试的女性跑者热量/汗水分布数据做出的针对性调整。</p>
+    <p>这一差异化的意义在于：传统中性/男款通用的跑步夹克在女跑者身上往往出现"通风口对不准出汗位置"的问题——胸口开了通风但汗出在文胸下围。Aerogami通过版型基因层面的男女分版，从根本上解决了这个错位问题。帽子和下摆均配有<strong>可调节弹力抽绳(Bungee Cords)</strong>，帽后另设固定环，可在不戴帽时将帽子贴身固定、减少风阻。</p>
+
+    <img src="img/nike-aerogami-w-back.jpg" alt="Nike Aerogami Women's Jacket 背面群体穿着">
+    <div class="img-caption">▲ Nike Aerogami Women's Jacket 背面群体实穿 | 背部翼形通风口在大面积背幅上呈对称展开，与肩胛骨运动轨迹协调</div>
+  </div>
+
+  <!-- Dimension 2: 印花与图案 -->
+  <div class="block">
+    <h3>印花与图案</h3>
+    <img src="img/nike-aerogami-det-01.jpg" alt="Nike Aerogami Jacket 翼形通风口闭合状态特写">
+    <div class="img-caption">▲ Nike Aerogami 翼形通风口闭合状态特写 | 干燥状态下，湿气反应膜保持平整，通风口呈微微隆起的折纸状折痕——这正是"aerogami"命名的由来(origami=折纸艺术)</div>
+    <p>Nike Aerogami的视觉设计核心在于<strong>"结构即图案"</strong>——翼形通风口的折纸状折痕本身就是夹克上最显著的视觉元素。在干燥闭合状态下，这些折痕呈现为<strong>胸前和背部的平行隆起线条</strong>，在光源下产生明暗交替的光影效果，类似折纸艺术中的山谷折痕。随着汗液激活，折痕<strong>进一步隆起并展开</strong>形成翼形开口，从外部可清晰看到夹克面料从"闭合平面"到"开放翼状"的结构形态变化——这是一个跑者可<strong>亲眼看见</strong>的功能反馈。</p>
+
+    <img src="img/nike-aerogami-det-02.jpg" alt="Nike Aerogami Jacket 翼形通风口开放状态">
+    <div class="img-caption">▲ Nike Aerogami 翼形通风口开放状态 | 汗液激活后，湿气反应膜收缩使面料隆起展开，形成可见的翼形气流通道</div>
+    <p>在色彩策略上，Nike为Aerogami系列提供了多个高饱和运动配色——<strong>Comet Blue（彗星蓝）、Volt（荧光黄）、Light Crimson（浅绯红）</strong>——这些高可见度色系在道路跑步场景中兼具安全警示功能。夹克上的Nike Swoosh和AeroSwift标识采用<strong>热转印反光工艺</strong>，在车灯照射下呈现完整反光轮廓。通风口折痕处未叠加额外印刷/刺绣——保持面料的完整功能性，避免任何可能干扰湿气反应膜收缩/膨胀的附加层。</p>
+
+    <img src="img/nike-aerogami-tech.jpg" alt="Nike Aerogami 技术演示实验室场景">
+    <div class="img-caption">▲ Nike Aerogami 技术演示实验室场景 | NSRL环境舱中展示Aerogami面料的湿气反应机制，背景可见跑步机测试和数据采集设备</div>
+    <p>从品牌视觉系统来看，Aerogami的"折纸美学"是Nike继Flyknit（飞织纹理）、AeroSwift（空气动力学线条）之后的第三套<strong>技术创新驱动的视觉语言</strong>。不同于传统印花依赖图案设计师的平面创作，Aerogami的视觉完全由<strong>面料结构本身的物理变形</strong>产生——是"技术美学"（Tech Aesthetic）在跑步品类上的典型应用。这种"看不见设计的设计"与飞比特"功能少负担"的品牌哲学高度共鸣。</p>
+  </div>
+
+  <!-- Dimension 3: 面料与技术 -->
+  <div class="block">
+    <h3>面料与技术</h3>
+    <img src="img/nike-aerogami-timelapse.jpg" alt="Nike Aerogami 通风口从闭合到开放的时间序列">
+    <div class="img-caption">▲ Nike Aerogami 通风口开闭时间序列 | 从干燥闭合(左上)→ 汗液接触开始收缩(左下)→ 翼形展开(右上)→ 完全开放(右下)的完整动态过程</div>
+    <p><strong>Aerogami的核心技术原理：湿气反应膜(Moisture-Reactive Film)</strong></p>
+    <p>面料由两层结构组成：<br>
+    ① <strong>外层</strong>：100%再生聚酯纤维机织面料，防风防水（Storm-FIT ADV技术），面料经DWR耐久防泼水处理；<br>
+    ② <strong>内层（通风口区域）</strong>：82%聚酯纤维 + 18%氨纶透气网眼 + <strong>湿气反应膜涂层</strong>——这是整个技术的核心。</p>
+    <p>湿气反应膜是一种<strong>湿度敏感性聚合物薄膜</strong>，涂覆在通风口区域的内层面料上。当跑者出汗时，汗水蒸发产生的高湿度微环境触发薄膜<strong>各向异性收缩</strong>（沿特定方向而非均匀收缩），使面料在预设的折痕线处向上拱起，形成翼形开口。当汗液蒸发完毕、湿度回落，薄膜<strong>恢复原始形态</strong>，面料回弹、通风口闭合。整个过程为<strong>纯物理响应</strong>，无需电能、无需传感器、无需跑者手动干预。</p>
+
+    <img src="img/nike-aerogami-det-01.jpg" alt="Nike Aerogami 翼形通风口闭合状态特写">
+    <div class="img-caption">▲ Aerogami通风口闭合状态纹理特写 | 折痕处的湿气反应膜在干燥状态下平整贴合，面料表面呈现微凸的折纸纹理</div>
+    <p>外层Storm-FIT ADV面料本身也值得关注：<strong>100%再生聚酯纤维</strong>、全接缝密封(Seam-Sealed)，在防风防水的同时保持一定透气性。内层透气网眼(Spandex Mesh)仅覆盖通风口对应区域，其余部位为单层结构，确保夹克整体重量控制在<strong>极轻量水平</strong>（男款M码约280-300g）。面料组合中不含任何PFAS类化合物，符合Nike 2025年可持续发展目标。</p>
+  </div>
+
+  <!-- Dimension 4: 功能细节 -->
+  <div class="block">
+    <h3>功能细节</h3>
+    <img src="img/nike-aerogami-vent.gif" alt="Nike Aerogami 翼形通风口开闭动画">
+    <div class="img-caption">▲ Nike Aerogami 翼形通风口开闭动画演示 | 汗液激活→薄膜收缩→翼形展开→气流进入→干燥→闭合的完整循环</div>
+    <p>Aerogami的自主通风循环是一个<strong>可无限重复</strong>的物理过程：跑者热身阶段不出汗→通风口闭合→身体保温；跑步中出汗→通风口自动打开→热气排出→体感冷却；出汗减少→通风口闭合→防止过冷；再次出汗→再次打开……这个循环在整场跑步中<strong>持续运行</strong>，跑者无需停下、无需拉拉链、无需脱穿调整。从用户体验角度看，这是"少负担"理念的极致实践——<strong>衣服自己替跑者做了所有调节决定</strong>。</p>
+
+    <img src="img/nike-aerogami-w-back.jpg" alt="Nike Aerogami Women's Jacket 背面口袋和帽细节">
+    <div class="img-caption">▲ Nike Aerogami Women's Jacket 背面视角 | 可见背部翼形通风口分布、侧拉链口袋位置以及与帽檐的协调关系</div>
+    <p>除Aerogami通风系统外，夹克还具备以下实用功能细节：</p>
+    <p>• <strong>侧拉链口袋 ×2</strong>：位于夹克两侧、避开通风口区域，可安全存放手机/钥匙/能量胶。口袋拉链采用<strong>防水YKK拉链</strong>，拉头带延长织带方便戴手套操作；<br>
+    • <strong>自收纳设计(Packable)</strong>：夹克可折叠收纳至自身口袋内，收纳后体积约为一本平装书大小，便于跑前穿/跑中脱/跑后收；<br>
+    • <strong>帽子前后双抽绳锁扣</strong>：帽前+帽后各一个Cord Lock，帽子收紧后可抵御侧风灌入，放松后不影响转头视野；<br>
+    • <strong>弹力袖口+内层软弹保护</strong>：袖口内侧缝有柔软弹性针织衬垫，防止长距离跑动中袖口边缘对手腕皮肤的反复摩擦。</p>
+
+    <img src="img/nike-aerogami-det-02.jpg" alt="Nike Aerogami Jacket 拉链和口袋细节">
+    <div class="img-caption">▲ Nike Aerogami Jacket 拉链和口袋细节 | 侧口袋避开通风口区域，防水YKK拉链+延长织带拉头</div>
+    <p>值得特别注意的是<strong>通风口的自清洁能力</strong>：由于翼形开口在汗液蒸发后会自动闭合，夹克正面不会出现传统通风拉链常见的外翻/卡顿问题。闭合状态下，翼形折痕紧密贴合、雨水不易倒灌（虽然Aerogami主打防风而非完全防水，Nike官方定位为Storm-FIT而非Storm-FIT ADV全防水等级）。整体而言，这套通风系统在<strong>无需跑者任何操作的条件下</strong>，实现了比任何手动拉链通风都更智能、更及时的气流调节。</p>
+  </div>
+</div>
+
+<!-- Divider -->
+<div class="divider"></div>
+
+<!-- ====== DOMESTIC: 李宁龙雀 ====== -->
+<div class="section domestic-section">
+  <div class="section-title">
+    <span class="flag">🟠</span> 李宁 LI-NING · 龙雀碳纱竞速背心
+  </div>
+  <div class="section-subtitle">李宁2026年龙雀计划的核心装备之一，行业首创Resistex Carbon碳纱面料——在纤维层面释放高浓度负氧离子，从"运动生理干预"角度重新定义了竞速服装的功能边界。以下仅聚焦飞比特尚未具备的差异化创新点。</div>
+
+  <!-- Dimension 1: 版型与剪裁 -->
+  <div class="block">
+    <h3>版型与剪裁</h3>
+    <img src="img/lining-lingque-front.jpg" alt="李宁龙雀碳纱竞速背心 正面平铺图">
+    <div class="img-caption">▲ 李宁龙雀竞速背心 AAYV123 男款 正面平铺 | 修身竞速剪裁、工字竞速肩带、左右胸口龙雀飞鸟 + 李宁飞燕双标识、两侧红色撞色线条、胸前"R U N  F O R  I T"竖向分隔字样</div>
+    <p>龙雀碳纱背心采用<strong>极简竞速剪裁</strong>——从平铺图可见，整件背心仅在前胸、后背、侧缝三处做功能性拼接，腋下采用<strong>一片式连贯剪裁</strong>（侧身面料从肋部直贯至袖窿底部），完全消除腋下纵向接缝。这种"零腋下缝"方案在马拉松竞速背心中属于顶级配置——彻底解决半马/全马场景下腋下缝线对皮肤的累积摩擦问题。</p>
+    <p><strong>工字竞速肩带</strong>是李宁为竞速背心设计的标志性结构：肩带从前胸领口经肩胛骨上缘直连后背中心，呈窄条"工"字形。这一设计的优势在于：① 大幅减少肩带面料与皮肤的接触面积，降低长时间奔跑中肩带勒痕的形成；② 肩胛骨和背阔肌的大部分区域完全裸露，强化<strong>极致散热</strong>——在马拉松后半程（30km+）核心体温上升阶段，裸露的散热效率远高于任何透气面料。</p>
+
+    <img src="img/lining-lingque-back.jpg" alt="李宁龙雀碳纱竞速背心 背面平铺图">
+    <div class="img-caption">▲ 李宁龙雀竞速背心 背面平铺 | 背部中线纵向排列"一切皆有可能"书法字样（李宁品牌精神符号），顶部居中为龙雀飞鸟刺绣标识，后背Y字形结构由肩带汇合于脊柱</div>
+    <p>从背面可见，背心采用<strong>Y型工字背结构</strong>——背部面料收窄至脊柱线两侧约10cm宽度，肩胛骨和背阔肌的大部分区域完全裸露。中间纵向贯穿的"一切皆有可能"书法字样（李宁品牌精神符号）是龙雀系列特有的视觉传承，区别于李宁主品牌的"李宁"Logo呈现。</p>
+    <p>前片下摆做<strong>微弧形收口</strong>，跑动中下摆不卷边、不翻翘，对应跑者在高步频状态下的躯干前倾姿态。背心整体无任何魔术贴、抽绳、扣具等外挂零件——所有调节都通过<strong>面料弹性和版型合体度</strong>实现。实测L码仅约40-56g（不同面料版本），穿在身上几近"无负担"。</p>
+
+    <img src="http://dingyue.ws.126.net/2026/0416/a1da259bj00tdk7o1004jd200u00190g00u00190.jpg" alt="李宁龙雀碳纱背心 精英运动员赛道实穿">
+    <div class="img-caption">▲ 李宁龙雀碳纱背心 精英运动员赛道实穿 | 贴身竞速剪裁，鱼鳞状面料纹理在赛道上清晰可见，胸前"RUN FOR IT"竖向字样随跑动自然贴合躯干</div>
+    <p>精英运动员在比赛中的实穿效果验证了上述版型设计的功能性：<strong>大迫杰、毛金虎、王文杰</strong>等多位李宁签约精英跑者在刷新中国/日本马拉松国家纪录时均身穿此款。实测从起跑到终点，贴身剪裁在42km全程几乎"忘记它的存在"——这是竞速背心版型的最高评价。</p>
+  </div>
+
+  <!-- Dimension 2: 印花与图案 -->
+  <div class="block">
+    <h3>印花与图案</h3>
+    <img src="img/lining-lingque-fabric.jpg" alt="李宁龙雀碳纱背心 面料与logo近景">
+    <div class="img-caption">▲ 李宁龙雀碳纱背心 面料与logo近景特写 | 织物细密微孔结构清晰可见，龙雀飞鸟黑色刺绣logo + "李宁"灰色印花字样的视觉层次，侧面鱼鳞面料纹理与主身面料的拼接缝</div>
+    <p>龙雀碳纱背心的视觉设计遵循与Nike Aerogami相同的逻辑——<strong>"由面料结构本身产生图案，而非后加工印花"</strong>。从近景可见，面料本体的<strong>鱼鳞状立体凸凹纹理</strong>（主身）与<strong>微孔网眼织物</strong>（侧面拼接）形成天然的视觉图案组合，无需任何印花加持。</p>
+    <p>品牌标识的处理极度克制：<strong>龙雀飞鸟标志</strong>采用黑色<strong>立体刺绣</strong>工艺（近景可见立体凹凸质感），位于左胸口袋位上方；<strong>"李宁"</strong>二字采用<strong>灰色热转印</strong>，位于右胸；胸前居中位置通过<strong>"R U N  F O R  I T"竖向字样</strong>分隔前片（既是装饰也是结构分区线）；后背中线的"一切皆有可能"书法字样则是李宁品牌的精神签名。</p>
+    <p>这些视觉元素的共同特征是<strong>面积小、位置克制、不破坏面料性能</strong>——鱼鳞纹理不被印花覆盖、透气微孔不被油墨堵塞、刺绣logo不增加负重的位置。相比国内部分品牌喜欢在胸前做大面积平铺印花/口号的设计，龙雀背心的视觉哲学明显更<strong>接近高端竞速装备的"减法美学"</strong>。</p>
+
+    <img src="http://dingyue.ws.126.net/2026/0416/c00ca792j00tdk7o2005yd200u00190g00u00190.jpg" alt="李宁龙雀碳纱背心 胸前龙雀图腾细节">
+    <div class="img-caption">▲ 李宁龙雀碳纱背心 胸前龙雀图腾细节 | 左胸龙雀飞鸟立体刺绣 logo，右胸李宁飞燕热转印logo，胸前"RUN FOR IT"竖向分隔字样——三大元素各司其职、互不干扰</div>
+    <p>值得特别注意的是，<strong>刺绣与热转印两种工艺在同一件背心上同时使用</strong>，分别服务不同功能：刺绣用于龙雀飞鸟标志（追求立体质感和系列识别度），热转印用于李宁Logo（追求轻薄和柔肤）。这种<strong>按功能分配工艺</strong>的精细化做法是国内品牌服装设计中较为少见的高级配置——多数竞速背心要么全用热转印（轻但平），要么全用刺绣（立体但可能磨皮）。</p>
+  </div>
+
+  <!-- Dimension 3: 面料与技术 -->
+  <div class="block">
+    <h3>面料与技术</h3>
+    <img src="http://dingyue.ws.126.net/2026/0416/2c23c45fj00tdk7o2005md200u000k0g00u000k0.jpg" alt="李宁龙雀碳纱背心 鱼鳞面料纹理特写">
+    <div class="img-caption">▲ 李宁龙雀碳纱背心 鱼鳞面料纹理特写 | V字形排列的立体鳞片与间隙构成的对流通道，碳纤维的银灰金属光泽在光线下自然呈现——这就是"结构即图案"的工艺实现</div>
+    <p><strong>核心面料：Resistex Carbon 碳纱</strong></p>
+    <p>Resistex Carbon是意大利面料科技公司Nurel开发的一种含碳纤维功能性纱线，李宁将其首次引入跑步服装品类（此前主要应用于户外/医疗领域）。碳纱的核心机制如下：</p>
+    <p>① <strong>负氧离子释放</strong>：碳纤维在人体体温（约37°C）和微电流（人体生物电）的作用下，持续释放<strong>高浓度负氧离子</strong>（浓度约1500-2000 ions/cm³，接近森林瀑布环境的自然浓度）。负氧离子被人体皮肤和呼吸道吸收后，可促进<strong>自主神经系统调节</strong>——具体表现为副交感神经活性增强、交感神经兴奋性适度降低；<br>
+    ② <strong>鱼鳞状3D立体编织结构</strong>：从近景可见，每片"鳞片"与面料基底之间形成约0.5-1mm的立体空间，构成自然的<strong>微型对流通道</strong>。这些通道不依赖面料拉伸、不因汗液浸润而塌陷，始终保持空气流通；<br>
+    ③ <strong>碳纤维固有特性</strong>：抑菌（碳的天然抗菌性）、抗静电（碳的导电性快速释放静电）、远红外反射（碳纤维反射人体远红外辐射，辅助保温）。</p>
+
+    <img src="http://dingyue.ws.126.net/2026/0416/8836f73aj00tdk7o3002vd200u000k0g00u000k0.jpg" alt="李宁龙雀碳纱背心 实验室测试数据">
+    <div class="img-caption">▲ 李宁龙雀碳纱背心 实验室测试数据 | 核心生理指标改善：有氧心率↓3.4bpm，出汗量↓2.87%，耗氧量↓0.74%——李宁运动科学研究中心发布的恒温恒湿跑步机测试结果</div>
+    <p>李宁运动科学研究中心公布的实测数据显示，穿着龙雀碳纱背心的精英运动员在恒温恒湿跑步机测试（配速3:30/km、温度25°C、湿度60%）中：</p>
+    <p>• <strong>稳态有氧心率</strong>：平均降低3.4 bpm（从168.7降至165.3 bpm）——约2%的心率降低意味着同等配速下<strong>更低的生理负荷</strong>；<br>
+    • <strong>出汗量</strong>：减少2.87%（通过体重差+饮水量精确测量）——碳纱的微型对流通道提升了汗液蒸发效率，减少了无效出汗；<br>
+    • <strong>耗氧量(VO₂)</strong>：降低0.74%——虽然幅度不大，但在马拉松精英级别（2:05-2:10完赛）的竞争中，0.74%的耗氧节省可能意味着30-60秒的完赛时间差。</p>
+    <p>需要强调的是，碳纱的负氧离子机制与飞比特已有的抑菌防臭技术（SILVADUR™ / Polygiene® 银离子）是<strong>完全不同</strong>的两个维度：银离子作用于<strong>微生物层面</strong>（抑制细菌繁殖→减少异味），碳纱作用于<strong>人体生理层面</strong>（负氧离子→自主神经调节→心率/出汗/耗氧改善）。前者解决"衣服不臭"，后者尝试解决"跑者表现更好"——这是竞速服装从"不拖后腿"到"主动赋能"的功能升级。</p>
+  </div>
+
+  <!-- Dimension 4: 功能细节 -->
+  <div class="block">
+    <h3>功能细节</h3>
+    <img src="http://dingyue.ws.126.net/2026/0416/38e5814ej00tdk7o50041d200u000k0g00u000k0.jpg" alt="李宁龙雀碳纱背心 马拉松赛道实穿">
+    <div class="img-caption">▲ 李宁龙雀碳纱背心 马拉松赛道实穿 | 高配速下的动态贴合效果，鱼鳞纹理随肌肉运动呈现自然的变形和光泽变化</div>
+    <p>碳纱鱼鳞结构的<strong>湿热管理机制</strong>值得深入拆解：</p>
+    <p>• <strong>微型对流效应</strong>：每个鳞片约0.5-1mm的立体高度在面料-皮肤之间撑起<strong>持续空气层</strong>。跑动中，身体的前后摆动产生<strong>泵送效应(Pumping Effect)</strong>——空气在鳞片间隙中持续进出，加速汗液蒸发。这与静止状态下的"透气"是两个完全不同的概念——龙雀背心在<strong>动态跑步</strong>中的透气表现远超静态测试数据；<br>
+    • <strong>湿态不塌陷</strong>：碳纤维本身的<strong>高刚性</strong>使鳞片结构在汗液浸润后不会像普通涤纶/锦纶面料那样软化塌陷。即使全背湿透，鳞片的立体形态依然保持，对流通道不受影响——这一点与马孔多的3D编织风洞结构异曲同工（详见 #004 期）；<br>
+    • <strong>碳纤导热</strong>：碳纤维的导热系数约为普通聚酯纤维的5-8倍，鳞片与皮肤接触时可快速导出局部热量，形成<strong>点阵式散热</strong>而非面状散热。</p>
+
+    <img src="http://dingyue.ws.126.net/2026/0416/4734ed3ej00tdk7o1002qd200u000efg00u000ef.jpg" alt="李宁龙雀计划全套装备">
+    <div class="img-caption">▲ 李宁龙雀计划全套竞速装备 | 碳纱背心 + 竞速短裤 + 飞电6 ELITE跑鞋 + AEROS科技压缩袜，构建完整的体温-步态-能量管理系统</div>
+    <p><strong>龙雀计划的系统性视野</strong>：李宁将碳纱背心放在一个完整的竞速装备系统（Total Race System）中考虑——上身碳纱背心负责<strong>体温调节+神经调节</strong>，下身竞速短裤负责<strong>肌肉支撑+自由步态</strong>，飞电跑鞋负责<strong>能量回弹+推进</strong>，AEROS科技压缩袜负责<strong>小腿肌肉稳定+乳酸代谢</strong>。四个模块形成一个闭环的竞速表现管理系统——这个"从单品到系统"的产品整合思维，是飞比特在竞速装备线上可以借鉴的方向。</p>
+  </div>
+</div>
+
+<!-- Takeaways -->
+<div class="takeaways">
+  <h2>设计借鉴点</h2>
+
+  <div class="takeaway-item">
+    <span class="tw-label foreign">Nike</span>
+    <strong>汗液激活翼形通风口 —— 从"手动透气"到"自主呼吸"的范式转换</strong>
+    <p>Aerogami通过湿气反应膜实现服装的自主通风——无需电池、传感器或跑者手动操作。通风口在汗液触发下自动打开、干燥后自动闭合，在整场跑步中持续运行。这一技术代表了跑步服装从"被动透气"到"主动响应"的代际升级，且不增加任何电子元件的重量和复杂度。</p>
+  </div>
+
+  <div class="takeaway-item">
+    <span class="tw-label domestic">李宁</span>
+    <strong>Resistex Carbon碳纱 —— 从"抑菌防臭"到"生理赋能"的功能跃迁</strong>
+    <p>碳纱在纤维层面释放负氧离子（1500-2000 ions/cm³），通过自主神经系统调节降低有氧心率（-3.4 bpm）、减少出汗量（-2.87%）、节省耗氧（-0.74%）。与飞比特已有的银离子抑菌技术属于完全不同的功能维度——碳纱从"衣服不臭"升级为"让跑者表现更好"。</p>
+  </div>
+
+  <div class="takeaway-item">
+    <span class="tw-label foreign">Nike</span>
+    <strong>Gender-Specific Vent Placement —— 男女分版通风口布局</strong>
+    <p>基于NSRL环境舱的男女跑者热力图数据，女款夹克通风口整体下移至运动文胸所在的高汗区域。这种从版型基因层面实现的性别差异化，解决了传统中性夹克"通风口对不准出汗位置"的普遍痛点。</p>
+  </div>
+
+  <div class="takeaway-item">
+    <span class="tw-label domestic">李宁</span>
+    <strong>鱼鳞状3D立体编织对流结构 —— 碳纤维刚性撑起永不塌陷的空气层</strong>
+    <p>碳纤维高刚性使鳞片结构在湿态下不软化塌陷，配合跑动中的泵送效应实现动态换气。这一"结构透气"思路与马孔多立体风洞（#004期）同为当代透气技术的两种领先方案——核心价值都在于"出汗后透气不衰减"。</p>
+  </div>
+
+  <div class="takeaway-item">
+    <span class="tw-label foreign">Nike</span>
+    <strong>"结构即图案" — 面料物理变形驱动的视觉美学</strong>
+    <p>Aerogami的翼形折痕和碳纱的鱼鳞纹理都是面料结构本身的视觉表达，不依赖后加工印花。这种"技术美学"路线与飞比特"功能少负担"理念高度一致——最好看的图案是不需要印上去的图案。</p>
+  </div>
+</div>
+
+<!-- Inspiration -->
+<div class="inspiration">
+  <h2>设计启发建议</h2>
+
+  <div class="insp-item">
+    <strong>方向一：探索"自适应透气"技术路线</strong>
+    <p>飞比特目前的风洞系列以激光打孔/物理冲孔为透气手段，属于"固定开孔率"方案。Aerogami的湿气反应膜和碳纱的立体鱼鳞结构分别提供了两种"动态透气"路径：化学膜响应 vs 物理结构响应。建议评估在26FW/27SS训练/竞速系列中引入自适应透气机制的可能性——尤其是在长距离训练场景下，"跑前保暖+跑中透气"的动态切换是跑者被长期忽视的真实需求。</p>
+  </div>
+
+  <div class="insp-item">
+    <strong>方向二：将"生理赋能"纳入面料开发视野</strong>
+    <p>飞比特目前的面料技术聚焦在物理性能（导汗/保暖/压缩/透气），尚未涉及对人体生理指标的主动干预。碳纱的负氧离子机制提示了一个新方向：面料不仅是"被动防护层"，也可以是"主动赋能层"。建议关注碳纱、远红外陶瓷纤维、微胶囊释放等"运动生理面料"领域的技术进展，评估在飞比特高端竞速产品线中引入的可能性。</p>
+  </div>
+
+  <div class="insp-item">
+    <strong>方向三：在竞速装备线上推进"性别差异化"设计</strong>
+    <p>Aerogami的Gender-Specific Vent Placement和龙雀背心的女性专属配色方案（"破晓"海军蓝×粉霜）都体现了对女性跑者生理结构和审美偏好的针对性设计。飞比特女性产品线目前以配色/尺码差异化为主，建议在版型结构层面推进更深层的性别差异化——如女性专属的汗区通风布局、运动文胸兼容性设计、女性热力图驱动的面料分区。</p>
+  </div>
+</div>
+
+<div class="report-footer">
+  FlipBelt飞比特 · 竞品设计分析日报 #005 · 2026-08-11<br>
+  国外：Nike Aerogami 汗液激活翼形通风系统 | 国内：李宁龙雀碳纱竞速背心<br>
+  核心人群：进阶跑者+严肃跑者 · 品牌调性：功能少负担
+</div>
+
+
+
+</body></html>
